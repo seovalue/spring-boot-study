@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+// 컨테이너까지 올리는 통합 테스트
 @SpringBootTest
 @Transactional
 class MemberServiceIntegrationTest {
@@ -23,7 +24,7 @@ class MemberServiceIntegrationTest {
     void 회원가입() {
         //given
         Member member = new Member();
-        member.setName("spring");
+        member.setName("springgg");
 
         //when
         Long saveId = memberService.join(member);
