@@ -16,7 +16,9 @@ public class MemberController {
 
     @Autowired //멤버 서비스를 스프링이 가져다 연결시켜준다.
     public MemberController(MemberService memberService) {
+
         this.memberService = memberService;
+        System.out.println("memberService: "+memberService.getClass());
     }
 
     //get은 조회할 때 주로 사용
