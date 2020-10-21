@@ -21,4 +21,9 @@ Description|REST API|HTTP Method
 ## 과정
 1. HelloWorldController를 등록하여 web과 POSTMAN을 통해 확인해봄.  
 ![](./README_img/commit_1.PNG)  
-![](./README_img/commit_1_1.PNG)
+![](./README_img/commit_1_1.PNG)  
+2. HelloWorldBean을 등록한 뒤, '/hello-world-bean'으로 요청이 들어오는 경우 message를 JSON 형태로 반환  
+- lombok 플러그인을 사용하였다. (getter, setter, constructor가 모두 자동으로 등록됨.. 😮)  
+- RestController Annotation을 활용하면 반환시키고자 하는 데이터 값을 Response Body에 저장하지 않더라도 자동으로 JSON 포맷으로 변경되어 반환됨.  
+![](./README_img/commit_2.PNG)  
+![](./README_img/commit_2_1.PNG)  

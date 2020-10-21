@@ -16,5 +16,9 @@ public class HelloWorldController {
         return "Hello World";
     }
 
+    @GetMapping("/hello-world-bean")
+    public HelloWorldBean helloWorldBean(){
+        return new HelloWorldBean("Hello World"); //java bean 형태로 반환 -> json 형태로 반환하게 됨.
+    }
 
 }
