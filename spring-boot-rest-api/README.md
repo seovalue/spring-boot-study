@@ -35,4 +35,6 @@ Description|REST API|HTTP Method
     ![](./README_img/commit_3.PNG)  
 - RestController  
 ![](./README_img/commit_3_1.PNG)  
+4. url에 가변 변수 사용  
+![](./README_img/commit_4.PNG)  
 
