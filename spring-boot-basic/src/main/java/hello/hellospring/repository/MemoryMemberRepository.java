@@ -5,15 +5,15 @@ import hello.hellospring.domain.Member;
 import java.util.*;
 
 
-public class MemoryMemberRepository implements MemberRepository{
+public class MemoryMemberRepository implements MemberRepository {
 
-    private static Map<Long,Member> store = new HashMap<>();
-    private  static long sequence = 0L;
+    private static Map<Long, Member> store = new HashMap<>();
+    private static long sequence = 0L;
 
     @Override
     public Member save(Member member) {
         member.setId(++sequence); //아이디 셋팅
-        store.put(member.getId(),member); //스토어에 저장
+        store.put(member.getId(), member); //스토어에 저장
         return member;
     }
 
@@ -34,7 +34,7 @@ public class MemoryMemberRepository implements MemberRepository{
         return new ArrayList<>(store.values()); //store의 멤버가 반환됨.
     }
 
-    public void clearStore(){
+    public void clearStore() {
         store.clear();
     }
 }

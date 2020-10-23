@@ -17,13 +17,13 @@ class MemberServiceTest {
     MemoryMemberRepository memberRepository;
 
     @BeforeEach //각 테스트를 실행하기 전 멤버리포지토리를 만들고, 멤버서비스에 넣어줌. -> 같은 리포지토리가 사용됨. DI, dependency injection
-    public void beforeEach(){
+    public void beforeEach() {
         memberRepository = new MemoryMemberRepository();
         memberService = new MemberService(memberRepository);
     }
 
     @AfterEach
-    public void afterEach(){
+    public void afterEach() {
         memberRepository.clearStore();
     }
 
@@ -42,7 +42,7 @@ class MemberServiceTest {
     }
 
     @Test
-    public  void 중복_회원_예외(){
+    public void 중복_회원_예외() {
         //given
         Member member1 = new Member();
         member1.setName("minjeong");

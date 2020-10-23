@@ -16,14 +16,14 @@ public class MemberService {
 
     // 외부에서 memberRepository를 넣어주도록 변경, new로 직접 생성하는 것이 아님.
 
-    public MemberService(MemberRepository memberRepository){
+    public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
 
     /*
     회원 가입
     * */
-    public Long join(Member member){
+    public Long join(Member member) {
         // 같은 이름이 있는 중복 회원 X.
         // Ctrl Alt V
         validateDuplicateMember(member); //중복 회원 검증
@@ -37,14 +37,15 @@ public class MemberService {
                     throw new IllegalStateException("이미 존재하는 회원입니다.");
                 });
     }
+
     /*
-    * 전체 회원 조회
-    * */
-    public List<Member> findMembers(){
+     * 전체 회원 조회
+     * */
+    public List<Member> findMembers() {
         return memberRepository.findAll();
     }
 
-    public Optional<Member> findOne(Long memberId){
+    public Optional<Member> findOne(Long memberId) {
         return memberRepository.findById(memberId);
     }
 }

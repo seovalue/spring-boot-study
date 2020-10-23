@@ -18,22 +18,22 @@ public class MemberController {
     public MemberController(MemberService memberService) {
 
         this.memberService = memberService;
-        System.out.println("memberService: "+memberService.getClass());
+        System.out.println("memberService: " + memberService.getClass());
     }
 
     //get은 조회할 때 주로 사용
     @GetMapping("/members/new")
-    public String createForm(){
+    public String createForm() {
         return "members/createMemberForm";
     }
 
     //post로 전달할 때
     @PostMapping("/members/new")
-    public String create(MemberForm form){
+    public String create(MemberForm form) {
         Member member = new Member();
         /*
-        * name이 널인 경우에는 입력받지 않도록 추가해보기.
-        * */
+         * name이 널인 경우에는 입력받지 않도록 추가해보기.
+         * */
         System.out.println(form.getName()); //form.html에서 name이 일치해야함.
         member.setName(form.getName());
 
@@ -42,7 +42,7 @@ public class MemberController {
     }
 
     @GetMapping("/members")
-    public String list(Model model){
+    public String list(Model model) {
         List<Member> members = memberService.findMembers();
         model.addAttribute("members", members);
         return "members/memberList";

@@ -13,12 +13,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-public class JdbcTemplateMemberRepository implements MemberRepository{
+public class JdbcTemplateMemberRepository implements MemberRepository {
 
     private final JdbcTemplate jdbcTemplate;
 
     @Autowired
-    public JdbcTemplateMemberRepository(DataSource dataSource){
+    public JdbcTemplateMemberRepository(DataSource dataSource) {
         this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
@@ -28,7 +28,7 @@ public class JdbcTemplateMemberRepository implements MemberRepository{
         jdbcInsert.withTableName("member").usingGeneratedKeyColumns("id");
 
         Map<String, Object> parameters = new HashMap<>();
-        parameters.put("name",member.getName());
+        parameters.put("name", member.getName());
 
         Number key = jdbcInsert.executeAndReturnKey(new MapSqlParameterSource(parameters));
         member.setId(key.longValue());
@@ -38,7 +38,7 @@ public class JdbcTemplateMemberRepository implements MemberRepository{
 
     @Override
     public Optional<Member> findById(Long id) {
-        List<Member> result = jdbcTemplate.query("select * from member where id = ?",memberRowMapper(), id);
+        List<Member> result = jdbcTemplate.query("select * from member where id = ?", memberRowMapper(), id);
         return result.stream().findAny();
     }
 
@@ -50,10 +50,10 @@ public class JdbcTemplateMemberRepository implements MemberRepository{
 
     @Override
     public List<Member> findAll() {
-        return jdbcTemplate.query("select * from member",memberRowMapper());
+        return jdbcTemplate.query("select * from member", memberRowMapper());
     }
 
-    private RowMapper<Member> memberRowMapper(){
+    private RowMapper<Member> memberRowMapper() {
         return (rs, rowNum) -> {
             Member member = new Member();
             member.setId(rs.getLong("id"));
