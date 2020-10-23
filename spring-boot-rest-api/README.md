@@ -27,3 +27,12 @@ Description|REST API|HTTP Method
 - RestController Annotation을 활용하면 반환시키고자 하는 데이터 값을 Response Body에 저장하지 않더라도 자동으로 JSON 포맷으로 변경되어 반환됨.  
 ![](./README_img/commit_2.PNG)  
 ![](./README_img/commit_2_1.PNG)  
+3. DispatcherServlet과 프로젝트 동작의 이해  
+- DispatcherServlet이란?  
+    클라이언트의 모든 요청을 한 곳으로 받아서 처리
+    요청에 맞는 핸들러로 요청을 전달
+    핸들러의 실행 결과를 http Response 형태로 만들어서 반환  
+    ![](./README_img/commit_3.PNG)  
+- RestController  
+![](./README_img/commit_3_1.PNG)  
+
