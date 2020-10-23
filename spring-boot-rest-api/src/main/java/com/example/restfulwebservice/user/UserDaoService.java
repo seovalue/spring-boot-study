@@ -58,4 +58,22 @@ public class UserDaoService {
 
         return null;
     }
+    /*
+     * 입력된 user와 id가 동일한 유저를 찾아서 해당 유저의 정보를 입력된 내용으로 수정한다.
+     * 만약 일치하는 id를 가진 유저가 없다면, null을 리턴한다.
+     * */
+    public User revise(User user){
+        Iterator<User> iterator = users.iterator();
+
+        while(iterator.hasNext()){
+            User u = iterator.next();
+            if (u.getId() == user.getId()){
+                u.setName(user.getName());
+                u.setJoinDate(user.getJoinDate());
+                return u;
+            }
+        }
+
+        return null;
+    }
 }

@@ -74,7 +74,12 @@ rest api를 개발할 때, 예외 핸들링을 조합해서 적절한 http statu
 11. 사용자 삭제를 위한 api 구현 - DELETE METHOD  
 입력된 id에 해당하는 사용자를 delete method를 활용하여 삭제하는 것을 구현해보았다.  
 ![](./README_img/commit_11.PNG)  
-![](./README_img/commit_11_1.PNG)
+![](./README_img/commit_11_1.PNG)  
+
+12. 사용자 수정을 위한 api 구현 - PUT METHOD  
+입력된 User 객체의 id와 일치하는 사용자가 존재한다면, 기존의 user 정보를 새롭게 입력된 user 정보로 업데이트한다.  
+![](./README_img/commit_12.PNG)  
+![](./README_img/commit_12_1.PNG)  
 
  
 

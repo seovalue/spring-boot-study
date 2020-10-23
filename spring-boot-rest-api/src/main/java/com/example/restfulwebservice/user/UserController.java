@@ -53,4 +53,13 @@ public class UserController {
             throw new UserNotFoundException(String.format("ID[%s] not found", id));
         }
     }
+
+    @PutMapping("/users")
+    public void reviseUser(@RequestBody User user){
+        User revisedUser = service.revise(user);
+
+        if (revisedUser == null){
+            throw new UserNotFoundException(String.format("ID[%s] not found", user.getId()));
+        }
+    }
 }
