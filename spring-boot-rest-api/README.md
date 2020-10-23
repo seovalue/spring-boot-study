@@ -71,6 +71,10 @@ rest api를 개발할 때, 예외 핸들링을 조합해서 적절한 http statu
 이번에는 aop를 활용하여 `CustomizedResponseEntityExceptionHandler` 클래스를 생성하여 에러가 발생했을 때 우리가 전달하고 싶은 정보만 담아서 전달할 수 있도록 구성하였다.  
 ![](./README_img/commit_10.PNG)  
 
+11. 사용자 삭제를 위한 api 구현 - DELETE METHOD  
+입력된 id에 해당하는 사용자를 delete method를 활용하여 삭제하는 것을 구현해보았다.  
+![](./README_img/commit_11.PNG)  
+![](./README_img/commit_11_1.PNG)
 
  
 
