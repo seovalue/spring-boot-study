@@ -59,5 +59,11 @@ Description|REST API|HTTP Method
 이 예제에서는 userid가 서버에서 생성되므로 그를 포함한 uri를 리턴한다.
 rest api를 개발할 때, 예외 핸들링을 조합해서 적절한 http status code를 전달하는 것이 좋다. 작업 용도에 맞춰서 http 리소스의 상태를 담아서 전달하자!
 ![](./README_img/commit_8.PNG)  
+
+9. HTTP Status Code 제어를 위한 Exception Handling
+![](./README_img/commit_9.PNG)  
+존재하지 않는 유저를 조회했을 때, 존재하지 않지만 오류는 아니기에 (기존: null을 리턴하도록 함) 2xx의 코드를 나타냈었다.  
+따라서, 존재하지 않는 유저를 조회하면 not found 에러가 발생할 수 있도록 변경한다. 하지만 이때는 5xx 에러가 발생하기 때문에 404 not found로 변경하기 위해 @ResponseStatus를 활용하여 not found가 뜨도록 변경하였다.
+![](./README_img/commit_9_1.PNG)
  
 
