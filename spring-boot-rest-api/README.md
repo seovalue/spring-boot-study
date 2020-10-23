@@ -37,6 +37,12 @@ Description|REST API|HTTP Method
 ![](./README_img/commit_3_1.PNG)  
 4. url에 가변 변수 사용  
 ![](./README_img/commit_4.PNG) 
-5. User Service API 추가  
+5. User 도메인 클래스 생성  
+- user package 생성  
+- 하위에 User 클래스와 UserDaoService라는 DB 이용 오브젝트 서비스 클래스 생성  
+6. 사용자 목록 조회를 위한 api 구현 - get http
+![](./README_img/commit_6.PNG)  
+![](./README_img/commit_6_1.PNG)   
+
  
 

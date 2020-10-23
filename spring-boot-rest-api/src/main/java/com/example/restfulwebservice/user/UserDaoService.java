@@ -7,10 +7,13 @@ package com.example.restfulwebservice.user;
 * DB를 사용해 데이터를 조회하거나 조작하는 기능을 전담하도록 만든 오브젝트
 * */
 
+import org.springframework.stereotype.Service;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+@Service //이 컴포넌트가 어떤 용도로 사용될 것인지 annotation
 public class UserDaoService {
     private static List<User> users = new ArrayList<>();
     private static int usersCount = 3;
