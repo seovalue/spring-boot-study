@@ -54,5 +54,10 @@ Description|REST API|HTTP Method
 ![](./README_img/commit_7.PNG)  
 ![](./README_img/commit_7_1.PNG)  
 
+8. HTTP STATUS CODE 제어  
+서버에서 반환시켜주고자 하는 값을 ResponseEntitiy에 담아서 전달.  
+이 예제에서는 userid가 서버에서 생성되므로 그를 포함한 uri를 리턴한다.
+rest api를 개발할 때, 예외 핸들링을 조합해서 적절한 http status code를 전달하는 것이 좋다. 작업 용도에 맞춰서 http 리소스의 상태를 담아서 전달하자!
+![](./README_img/commit_8.PNG)  
  
 
