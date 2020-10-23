@@ -64,6 +64,13 @@ rest api를 개발할 때, 예외 핸들링을 조합해서 적절한 http statu
 ![](./README_img/commit_9.PNG)  
 존재하지 않는 유저를 조회했을 때, 존재하지 않지만 오류는 아니기에 (기존: null을 리턴하도록 함) 2xx의 코드를 나타냈었다.  
 따라서, 존재하지 않는 유저를 조회하면 not found 에러가 발생할 수 있도록 변경한다. 하지만 이때는 5xx 에러가 발생하기 때문에 404 not found로 변경하기 위해 @ResponseStatus를 활용하여 not found가 뜨도록 변경하였다.
-![](./README_img/commit_9_1.PNG)
+![](./README_img/commit_9_1.PNG)  
+
+10. AOP를 활용한 예외 처리  
+9.에서는 에러가 발생했을 때 trace를 통해 내부 코드와 관련된 정보가 담길 수도 있었다.
+이번에는 aop를 활용하여 `CustomizedResponseEntityExceptionHandler` 클래스를 생성하여 에러가 발생했을 때 우리가 전달하고 싶은 정보만 담아서 전달할 수 있도록 구성하였다.  
+![](./README_img/commit_10.PNG)  
+
+
  
 
