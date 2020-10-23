@@ -22,11 +22,13 @@ Description|REST API|HTTP Method
 1. HelloWorldController를 등록하여 web과 POSTMAN을 통해 확인해봄.  
 ![](./README_img/commit_1.PNG)  
 ![](./README_img/commit_1_1.PNG)  
+
 2. HelloWorldBean을 등록한 뒤, '/hello-world-bean'으로 요청이 들어오는 경우 message를 JSON 형태로 반환  
 - lombok 플러그인을 사용하였다. (getter, setter, constructor가 모두 자동으로 등록됨.. 😮)  
 - RestController Annotation을 활용하면 반환시키고자 하는 데이터 값을 Response Body에 저장하지 않더라도 자동으로 JSON 포맷으로 변경되어 반환됨.  
 ![](./README_img/commit_2.PNG)  
 ![](./README_img/commit_2_1.PNG)  
+
 3. DispatcherServlet과 프로젝트 동작의 이해  
 - DispatcherServlet이란?  
     클라이언트의 모든 요청을 한 곳으로 받아서 처리
@@ -35,14 +37,22 @@ Description|REST API|HTTP Method
     ![](./README_img/commit_3.PNG)  
 - RestController  
 ![](./README_img/commit_3_1.PNG)  
+
 4. url에 가변 변수 사용  
-![](./README_img/commit_4.PNG) 
+![](./README_img/commit_4.PNG)  
+
 5. User 도메인 클래스 생성  
 - user package 생성  
-- 하위에 User 클래스와 UserDaoService라는 DB 이용 오브젝트 서비스 클래스 생성  
+- 하위에 User 클래스와 UserDaoService라는 DB 이용 오브젝트 서비스 클래스 생성 
+ 
 6. 사용자 목록 조회를 위한 api 구현 - get http
 ![](./README_img/commit_6.PNG)  
 ![](./README_img/commit_6_1.PNG)   
+
+7. 사용자 등록을 위한 api 구현 - post method  
+같은 url이어도 method에 따라서 하는 역할이 달라진다.  
+![](./README_img/commit_7.PNG)  
+![](./README_img/commit_7_1.PNG)  
 
  
 
