@@ -96,4 +96,15 @@ body에 에러 메시지를 담기 위해 `CustomizedResponseEntityExceptionHand
 ![](./README_img/commit_14.PNG)  
 ![](./README_img/commit_14_1.PNG) 
 
+15. Response 데이터 형식 변환 -XML 포맷  
+헤더의 VALUE로 `application/xml` 형태로 요청했을 때 적절한 형식으로 변환하여 처리하기 위해 라이브러리를 추가한다.  
+```
+<dependency>
+    <groupId>com.fasterxml.jackson.dataformat</groupId>
+    <artifactId>jackson-dataformat-xml</artifactId>
+    <version>2.10.2</version>
+</dependency>
+```
+![](./README_img/commit_15.PNG)
+
 
