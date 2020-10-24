@@ -81,5 +81,10 @@ rest api를 개발할 때, 예외 핸들링을 조합해서 적절한 http statu
 ![](./README_img/commit_12.PNG)  
 ![](./README_img/commit_12_1.PNG)  
 
- 
+13. 유효성 체크를 위한 Validation API 사용  
+User 클래스에 Validation을 추가한다. 이름은 최소 2글자 이상, Date는 과거의 일자만 입력할 수 있도록 하는 조건을 추가했다.  
+이후 Postman을 통해 확인해본 결과는 다음과 같다. 조건을 만족시키지 않는 경우에는 404 Bad Request Status code를 나타내며, Status code 이외에
+body에 에러 메시지를 담기 위해 `CustomizedResponseEntityExceptionHandler`에 Not Valid에 대한 에러 핸들러도 추가하였다.  
+![](./README_img/commit_13.PNG)  
+![](./README_img/commit_13_1.PNG)
 
