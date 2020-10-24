@@ -44,7 +44,10 @@ public class AdminUserController {
     }
 
     // 특정 사용자 조회
-    @GetMapping("v1/users/{id}")
+    // @GetMapping("v1/users/{id}")
+    // @GetMapping(value = "/users/{id}/", params = "version=1")
+    // @GetMapping(value = "/users/{id}", headers = "X-API-VERSION=1")
+    @GetMapping(value = "v1/users/{id}", produces = "application/vnd.company.appv1+json")
     public MappingJacksonValue retrieveUserV1(@PathVariable int id){
         User user = service.findOne(id); //Ctrl+alt+V
 
@@ -62,7 +65,10 @@ public class AdminUserController {
         return mapping;
     }
 
-    @GetMapping("v2/users/{id}")
+    // @GetMapping("v2/users/{id}")
+    // @GetMapping(value = "/users/{id}/", params = "version=2")
+//    @GetMapping(value = "/users/{id}", headers = "X-API-VERSION=2")
+    @GetMapping(value = "v2/users/{id}", produces = "application/vnd.company.appv2+json")
     public MappingJacksonValue retrieveUserV2(@PathVariable int id){
         User user = service.findOne(id); //Ctrl+alt+V
 

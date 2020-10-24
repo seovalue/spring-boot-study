@@ -117,11 +117,25 @@ body에 에러 메시지를 담기 위해 `CustomizedResponseEntityExceptionHand
 필드를 가진 클래스를 제어하고 싶을 때에는 `Filter`라는 클래스를 활용하여 제어할 수 있다.  
 ![](./README_img/commit_16.PNG)   
 
-18. REST API Version 관리
+18. REST API Version 관리  
+rest api가 변경될 때에도 버전 관리를 사용하고 또한 사용자에게 적절한 버전을 안내할 때에도 버전을 사용한다.  
 - URI  
     URI를 활용하여 V1, V2에 따라 REST API 를 관리해보았다. V2로 요청하는 경우에는 User 도메인 클래스에 `grade`라는 필드를 추가하여 보여질 수 있도록 하였다.  
-- Request Param and Header
+    `URI: @GetMapping("v2/users/{id}"), 브라우저 O` 
+- Request Param and Header, MIME-type  
+    `Param : @GetMapping(value = "/users/{id}/", params = "version=2"), 브라우저 O`  
+    `Header : @GetMapping(value = "/users/{id}/", headers = "X-API-VERSION2"), 브라우저 X`  
+    `MIME-TYPE: @GetMapping(value = "/users/{id}/", produces = "application/vnd.company.appv2+json"), 브라우저 X`  
     
+* URI 값에 과도한 정보를 넣는 것은 지양  
+* 잘못된 헤더 값을 사용하는 것 주의  
+* 인터넷 캐시로 반영이 안될 수도 있음. (캐시가 남아있어 이전의 데이터가 그대로 사용될 수 있음)  
+* api는 적절한 용도에 따라서 웹브라우저에서 작동할 수 있어야 한다.  
+* 모든 REST API에 대해서는 API Documentation이 필요하다.  
+    
+![](./README_img/commit_17.PNG)
+![](./README_img/commit_17_!.PNG)
+![](./README_img/commit_17_2.PNG)
 
 
 
