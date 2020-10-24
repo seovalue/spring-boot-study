@@ -24,8 +24,8 @@ Description|REST API|HTTP Method
 ![](./README_img/commit_1_1.PNG)  
 
 2. HelloWorldBean을 등록한 뒤, '/hello-world-bean'으로 요청이 들어오는 경우 message를 JSON 형태로 반환  
-- lombok 플러그인을 사용하였다. (getter, setter, constructor가 모두 자동으로 등록됨.. 😮)  
-- RestController Annotation을 활용하면 반환시키고자 하는 데이터 값을 Response Body에 저장하지 않더라도 자동으로 JSON 포맷으로 변경되어 반환됨.  
+- `lombok` 플러그인을 사용하였다. (`getter`, `setter`, `constructor`가 모두 자동으로 등록됨.. 😮)  
+- `RestController Annotation`을 활용하면 반환시키고자 하는 데이터 값을 Response Body에 저장하지 않더라도 자동으로 JSON 포맷으로 변경되어 반환됨.  
 ![](./README_img/commit_2.PNG)  
 ![](./README_img/commit_2_1.PNG)  
 
@@ -55,9 +55,9 @@ Description|REST API|HTTP Method
 ![](./README_img/commit_7_1.PNG)  
 
 8. HTTP STATUS CODE 제어  
-서버에서 반환시켜주고자 하는 값을 ResponseEntitiy에 담아서 전달.  
-이 예제에서는 userid가 서버에서 생성되므로 그를 포함한 uri를 리턴한다.
-rest api를 개발할 때, 예외 핸들링을 조합해서 적절한 http status code를 전달하는 것이 좋다. 작업 용도에 맞춰서 http 리소스의 상태를 담아서 전달하자!
+서버에서 반환시켜주고자 하는 값을 `ResponseEntitiy`에 담아서 전달.  
+이 예제에서는 userid가 서버에서 생성되므로 그를 포함한 `uri`를 리턴한다.
+rest api를 개발할 때, 예외 핸들링을 조합해서 적절한 `http status code`를 전달하는 것이 좋다. 작업 용도에 맞춰서 http 리소스의 상태를 담아서 전달하자!
 ![](./README_img/commit_8.PNG)  
 
 9. HTTP Status Code 제어를 위한 Exception Handling
@@ -86,5 +86,14 @@ User 클래스에 Validation을 추가한다. 이름은 최소 2글자 이상, D
 이후 Postman을 통해 확인해본 결과는 다음과 같다. 조건을 만족시키지 않는 경우에는 404 Bad Request Status code를 나타내며, Status code 이외에
 body에 에러 메시지를 담기 위해 `CustomizedResponseEntityExceptionHandler`에 Not Valid에 대한 에러 핸들러도 추가하였다.  
 ![](./README_img/commit_13.PNG)  
-![](./README_img/commit_13_1.PNG)
+![](./README_img/commit_13_1.PNG)  
+
+14. 다국어 처리를 위한 Internationalization 구현  
+먼저, `@SpringBootApplication` 어노테이션이 있는 java 파일에`LocaleResolver`라는 `@Bean`을 등록한다.
+이후, `messages.properties`를 en, fr 그리고 기본(ko)으로 생성한 뒤, `Controller`에서 `Header`에 들어오는 정보에 따라 알맞은 언어로 처리해주도록 설정하였다.  
+* POSTMAN에서 한글이 깨지는 현상이 발생했다. 이는 Intellj에서 UTF-8 인코딩 설정을 한 뒤, 재실행하면 해결되었다.  
+
+![](./README_img/commit_14.PNG)  
+![](./README_img/commit_14_1.PNG) 
+
 
