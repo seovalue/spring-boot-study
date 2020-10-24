@@ -105,6 +105,13 @@ body에 에러 메시지를 담기 위해 `CustomizedResponseEntityExceptionHand
     <version>2.10.2</version>
 </dependency>
 ```
-![](./README_img/commit_15.PNG)
+![](./README_img/commit_15.PNG)  
+
+16. Response 데이터 제어를 위한 Filtering  
+`User`에 `password`와 `ssn`을 등록한다. 하지만 이 정보들을 외부에 노출되면 안되는 정보들이다. 해결할 수 있는 방법으로는 `*`로 대체해서 보여주는 방법 (ex. password:1234 -> password:****), 또는 아예 null 값으로 리턴하는 방법  
+15.에서 등록한 jackson 라이브러리를 활용하면, 외부에 노출시키고 싶지 않은 데이터의 처리가 가능하다. 해당 데이터에 `@JsonIgnore` 어노테이션을 통해 노출되지 않도록 할 수 있다. 이는 해당하는 필드까지 보여지지 않도록 한다.
+하지만 이 방법을 사용하면 클라이언트에게만 보이지 않도록 처리할 수 있고, Debug 로그에는 그대로 모든 정보가 찍히게 된다.  
+
+
 
 
