@@ -113,5 +113,9 @@ body에 에러 메시지를 담기 위해 `CustomizedResponseEntityExceptionHand
 하지만 이 방법을 사용하면 클라이언트에게만 보이지 않도록 처리할 수 있고, Debug 로그에는 그대로 모든 정보가 찍히게 된다.  
 
 
+17. Filtering - 개별 사용자 조회/ admin  
+필드를 가진 클래스를 제어하고 싶을 때에는 `Filter`라는 클래스를 활용하여 제어할 수 있다.  
+![](./README_img/commit_16.PNG)   
+
 
 
