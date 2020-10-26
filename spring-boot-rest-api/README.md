@@ -138,4 +138,26 @@ rest api가 변경될 때에도 버전 관리를 사용하고 또한 사용자�
 ![](./README_img/commit_17_2.PNG)
 
 
+19. Level3 단계의 REST API 구현을 위한 HATEOAS 적용  
+HATEOAS(hypermedia as the engine of application state): 현재 리소스와 연관된 자원 상태 정보를 제공  
+![](./README_img/commit_18.PNG)  
+
+
+20. REST API Documentation을 위한 Swagger  
+- localhost:8088/v2/api-docs  
+![](README_img/commit_19.PNG)  
+- localhost:8088/swagger-ui.html  
+![](README_img/commit_19_1.PMG)  
+
+21. Customize Swagger Documentation  
+Contact, APIInfo, Produces and Consumes를 api docs에 추가  
+![](README_img/commit_20.PNG)  
+User 클래스에 description 추가  
+![](README_img/commit_20_1.PNG)
+
+
+
+
+
+
 
