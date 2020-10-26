@@ -153,7 +153,21 @@ HATEOAS(hypermedia as the engine of application state): 현재 리소스와 연�
 Contact, APIInfo, Produces and Consumes를 api docs에 추가  
 ![](README_img/commit_20.PNG)  
 User 클래스에 description 추가  
-![](README_img/commit_20_1.PNG)
+![](README_img/commit_20_1.PNG)  
+
+22. Set Actuator for REST API Monitoring  
+23. HAL 브라우저를 이용한 hateoas 기능 구현  
+hal은 api의 리소스들 간에 쉽게 hyperlink를 제공해주는 간단한 포맷이다. 따라서 해당 api를 사용하는 다른 개발자들에게 좀 더 좋은 환경을 제공할 수 있다.  
+즉, 우리가 제공하는 정보에 특정 정보에 대한 link를 추가하는 것!!  
+24. Spring Security  
+rest api app에 인증을 처리하기 위한 방법 -> 토큰, id와 비밀번호를 이용하는 방법 등등  
+Spring boot security에서 제공하는 인증처리 방법을 활용하여 빌드한 뒤, 생성된 password를 이용하여 api 정보를 요청하고 제공받을 수 있다.  
+![](./README_img/commit_21.PNG)  
+25. Configuration 클래스를 이용한 사용자 인증 처리  
+먼저, `yml` 파일에 security를 등록하여 고정된 `username`과 `password`를 이용하여 권한을 인정받는 방식을 테스트 해 보았다.  
+![](./README_img/commit_22.PNG)  
+하지만 고정된 값을 이용하는 경우 값을 변경하고 싶을 때엔 매번 서버를 재가동해야한다. 따라서 고정되어있는 정보가 아닌 `Config`를 통해 사용자 정보를 가져오도록 설정하였다.  
+![](./README_img/commit_22_1.PNG)  
 
 
 
