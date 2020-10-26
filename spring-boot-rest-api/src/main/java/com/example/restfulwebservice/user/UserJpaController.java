@@ -91,4 +91,20 @@ public class UserJpaController {
 
         return ResponseEntity.created(location).build();
     }
+
+    @DeleteMapping("/users/{id}/posts/{post_id}")
+    public void deletePost(@PathVariable int id, @PathVariable int post_id){
+        /*
+        * 포스트에서도 지우고, 사용자의 포스트에서도 지워야한다.
+        * */
+
+        // 유저를 먼저 조회한다.
+        Optional<User> user = userRepository.findById(id);
+        if (!user.isPresent()){
+            throw new UserNotFoundException(String.format("%s is not found",id));
+        } else {
+            postRepository.deleteById(post_id);
+        }
+
+    }
 }

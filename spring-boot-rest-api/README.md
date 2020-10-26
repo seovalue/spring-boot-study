@@ -226,7 +226,7 @@ Spring boot security에서 제공하는 인증처리 방법을 활용하여 빌�
 32. 게시물 조회를 위한 Post Entity와 User Entity와의 관계 설정 및 JPA를 활용한 새 게시물 추가 
   
 ![](./README_img/commit_28.PNG)  
-TODO: 게시물의 삭제 기능과 상세 조회 기능을 추가해보기!  
+TODO: 게시물의 삭제 기능과 상세 조회 기능을 추가해보기! (추가 완료)
 
 
 
