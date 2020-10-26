@@ -215,6 +215,10 @@ Spring boot security에서 제공하는 인증처리 방법을 활용하여 빌�
   
 ![](./README_img/commit_24.PNG)
 
+30. JPA를 이용한 사용자 목록 조회- GET HTTP METHOD  
+  
+![](./README_img/commit_25.PNG)
+
 
 
 
