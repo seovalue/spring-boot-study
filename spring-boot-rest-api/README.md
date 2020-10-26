@@ -206,7 +206,11 @@ Spring boot security에서 제공하는 인증처리 방법을 활용하여 빌�
     ORM 프레임워크가 중간에서 `매핑`하는 역할
 
 27. JPA 사용을 위한 Dependency 추가와 설정  
-28. Spring Data JPA를 이용한 Entity 설정과 초기 데이터 생성
+28. Spring Data JPA를 이용한 Entity 설정과 초기 데이터 생성  
+초기 데이터를 생성하고, h2 데이터베이스에 insert하였다.  
+  
+  
+![](./README_img/commit_23.PNG)
 
  
 

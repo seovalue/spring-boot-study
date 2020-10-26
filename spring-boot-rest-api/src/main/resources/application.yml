@@ -6,12 +6,17 @@ logging:
     org.springframework: DEBUG
 
 spring:
+  jpa:
+    show-sql: true
   messages:
     basename: messages
-#  security:
-#    user:
-#      name: username
-#      password: passw0rd
+  h2:
+    console:
+      enabled: true
+  security:
+    user:
+      name: username
+      password: passw0rd
 
 management:
   endpoint:
@@ -19,9 +24,3 @@ management:
       exposure:
         include: "*"
 
-jpa:
-  show-sql: true
-
-h2:
-  console:
-    enabled: true
